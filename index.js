@@ -1,3 +1,5 @@
+document.getElementById("initialNum").value = 0;
+
 function update() {
    let num1 = document.getElementById("initialNum").value;
 
@@ -22,3 +24,5 @@ function update() {
    document.getElementById("kilos2").textContent = kilos.toFixed(3);
    document.getElementById("pounds2").textContent = pounds.toFixed(3);
 }
+
+update();
