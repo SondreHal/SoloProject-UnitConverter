@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link
+         href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+      <div class="flex" id="rainbow_bg">
+         <h1>Metric/Imperial unit conversion</h1>
+         <input type="number" id="initialNum" oninput="update()"></input>
+      </div>
+      <div class="flex" id="dark_bg">
+         <div>
+            <span class="bold_font">Length (Meter/Feet)</span>
+            <div>
+               <span id="meters1">0</span> meters =
+               <span id="meters2">0.000</span> feet |
+               <span id="feet1">0</span> feet =
+               <span id="feet2">0.000</span> meters
+            </div>
+         </div>
+         <div>
+            <span class="bold_font">Volume (Liters/Gallons) </span>
+            <div>
+               <span id="liters1">0</span> liters =
+               <span id="liters2">0.000</span> gallons |
+               <span id="gallons1">0</span> gallons =
+               <span id="gallons2">0.000</span> liters
+            </div>
+         </div>
+         <div>
+            <span class="bold_font">Mass (Kilograms/Pounds)</span>
+            <div>
+               <span id="kilos1">0</span> kilos =
+               <span id="kilos2">0.000</span> pounds |
+               <span id="pounds1">0</span> pounds =
+               <span id="pounds2">0.000</span> kilos
+            </div>
+         </div>
+      </div>
+      <script src="index.js"></script>
+   </body>
+</html>
