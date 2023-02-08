@@ -1,6 +1,6 @@
 const numberInput = document.getElementById('number_input');
 
-const meters = document.getElementById('meter');
+const meters = document.getElementById('meters');
 const feet = document.getElementById('feet');
 
 const liters = document.getElementById('liters');
@@ -19,6 +19,12 @@ const focusInput = () => {
 };
 window.onload = focusInput();
 
+numberInput.addEventListener('keydown', (e) => {
+	if (e.code === 'Enter') {
+		convertValue();
+	}
+});
+
 // USES INPUT VALUE AS BASE FOR UNITS,
 // CONVERTING THEM FROM METRIC -> IMPERIAL UNITS AND VICE VERSA
 function convertValue() {
@@ -30,16 +36,16 @@ function convertValue() {
 	}
 
 	//Edits the values of the meter unit based on the input
-	meters.textContent = `${valueInput} meter = ${(valueInput * 3.28084).toFixed(3)} feet`;
-	feet.textContent = `${valueInput} feet = ${(valueInput * 0.3048).toFixed(3)} meters`;
+	meters.textContent = `${valueInput} meters = ${(valueInput * 3.28084).toFixed(2)} feet`;
+	feet.textContent = `${valueInput} feet = ${(valueInput * 0.3048).toFixed(2)} meters`;
 
 	//Edits the values of the liter unit based on the input
-	liters.textContent = `${valueInput} liters = ${(valueInput * 0.264172).toFixed(3)} gallons`;
-	gallons.textContent = `${valueInput} gallons = ${(valueInput * 3.78541).toFixed(3)} liters`;
+	liters.textContent = `${valueInput} liters = ${(valueInput * 0.264172).toFixed(2)} gallons`;
+	gallons.textContent = `${valueInput} gallons = ${(valueInput * 3.78541).toFixed(2)} liters`;
 
 	//Edits the values of the kilo unit based on the input
-	kilos.textContent = `${valueInput} kilos = ${(valueInput * 2.20462).toFixed(3)} pounds`;
-	pounds.textContent = `${valueInput} pounds = ${(valueInput * 0.453592).toFixed(3)} kilos`;
+	kilos.textContent = `${valueInput} kilos = ${(valueInput * 2.20462).toFixed(2)} pounds`;
+	pounds.textContent = `${valueInput} pounds = ${(valueInput * 0.453592).toFixed(2)} kilos`;
 }
 
 convertValue();

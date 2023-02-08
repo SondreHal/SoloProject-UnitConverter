@@ -8,7 +8,7 @@ body {
 	background-color: #1c1c1c;
 	color: #ffffff;
 	font-family: 'Inter', sans-serif;
-	padding: 50px 5px;
+	padding: 50px 16px;
 }
 
 .wrapper {
@@ -39,17 +39,17 @@ body {
 	margin: 0 auto;
 }
 .input_wrapper input[type='number'] {
+	-moz-appearance: textfield; /* REMOVES INPUT ARROWS ON FIREFOX	*/
 	background: transparent;
-	border: 2px solid #fda4af;
 	border-radius: 5px;
+	border: 2px solid #fda4af;
 	color: inherit;
 	font-size: 58px;
 	font-weight: 800;
 	line-height: 24.39px;
 	text-align: center;
-	width: 117px;
-	max-width: 100%;
-	-moz-appearance: textfield; /* REMOVES INPUT ARROWS ON FIREFOX	*/
+	width: 100%;
+	width: 240px;
 }
 .input_wrapper input[type='number']:focus {
 	outline: none;
@@ -93,19 +93,34 @@ body {
 	margin-bottom: 9px;
 	text-align: center;
 }
-.output_wrapper .unit_wrapper div {
+.output_wrapper .unit_wrapper .unit {
 	align-items: center;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
-.output_wrapper .unit_wrapper div p {
-	color: #5a537b;
+.output_wrapper .unit_wrapper p {
+	color: #353535;
+	display: inline;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 20px;
+	overflow-wrap: normal;
 	text-align: center;
+	word-break: break-word;
 }
-.output_wrapper .unit_wrapper div p:nth-of-type(2) {
+.output_wrapper .unit_wrapper p:nth-of-type(2) {
 	margin: 0 8px;
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	body {
+		padding: 0;
+	}
 }
