@@ -1,31 +1,88 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <link
-         href="https://fonts.googleapis.com/css?family=Inter&display=swap"
-         rel="stylesheet"
-      />
-      <link rel="stylesheet" href="style.css" />
-   </head>
-   <body>
-      <div class="flex" id="rainbow_bg">
-         <h1>Metric/Imperial unit conversion</h1>
-         <input type="number" id="initialNum" name="placeholder" oninput="update()" placeholder="1"></input>
-      </div>
-      <div class="flex" id="dark_bg">
-         <div>
-            <span class="bold_font">Length (Meter/Feet)</span>
-            <div id="meter"></div>
-         </div>
-         <div>
-            <span class="bold_font">Volume (Liters/Gallons) </span>
-            <div id="liter"></div>
-         </div>
-         <div>
-            <span class="bold_font">Mass (Kilograms/Pounds)</span>
-            <div id="kilo"></div>
-         </div>
-      </div>
-      <script src="index.js"></script>
-   </body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="style.css"
+		/>
+		<script
+			src="index.js"
+			defer
+		></script>
+		<title>Unit Converter</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="action_wrapper">
+				<h1>Metric/Imperial unit conversion</h1>
+
+				<div class="input_wrapper">
+					<input
+						type="number"
+						id="number_input"
+						name="number_input"
+						value="1"
+					/>
+					<button
+						class="btn_convert"
+						onclick="convertValue(), focusInput()"
+					>
+						Convert
+					</button>
+				</div>
+			</div>
+
+			<div class="output_wrapper">
+				<div class="unit_wrapper">
+					<h2>Length (Meter/Feet)</h2>
+					<div>
+						<p id="meter"></p>
+						<p>|</p>
+						<p id="feet"></p>
+					</div>
+				</div>
+
+				<div class="unit_wrapper">
+					<h2>Volume (Liters/Gallons)</h2>
+					<div>
+						<p id="liters"></p>
+						<p>|</p>
+						<p id="gallons"></p>
+					</div>
+				</div>
+
+				<div class="unit_wrapper">
+					<h2>Mass (Kilograms/Pounds)</h2>
+					<div>
+						<p id="kilos"></p>
+						<p>|</p>
+						<p id="pounds"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

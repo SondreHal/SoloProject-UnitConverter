@@ -1,29 +1,45 @@
-// Puts initial values of the different units in variables
-let meter = document.getElementById("meter");
-let liter = document.getElementById("liter");
-let kilo = document.getElementById("kilo");
+const numberInput = document.getElementById('number_input');
 
-// Function that constantly updates the values of the units based on the input
-function update() {
-	// Puts the top value of the converter in an variable
-	let num1 = document.getElementById("initialNum").value;
+const meters = document.getElementById('meter');
+const feet = document.getElementById('feet');
 
-	//if statement that says if num1 is blank then num1 will be 1
-	if (num1 === "") {
-		num1 = 1;
+const liters = document.getElementById('liters');
+const gallons = document.getElementById('gallons');
+
+const kilos = document.getElementById('kilos');
+const pounds = document.getElementById('pounds');
+
+const focusInput = () => {
+	numberInput.focus();
+
+	// TO PUT CURSOR AT END OF INPUT FIELD
+	var val = numberInput.value; //STORE VALUE OF INPUT
+	numberInput.value = ''; //CLEAR VALUE OF INPUT
+	numberInput.value = val; //SET THE VALUE BACK
+};
+window.onload = focusInput();
+
+// USES INPUT VALUE AS BASE FOR UNITS,
+// CONVERTING THEM FROM METRIC -> IMPERIAL UNITS AND VICE VERSA
+function convertValue() {
+	let valueInput = numberInput.value;
+
+	// TO ALWAYS HAVE A NUMBER TO CONVERT
+	if (valueInput === '') {
+		valueInput = 0;
 	}
 
 	//Edits the values of the meter unit based on the input
-	meter.textContent = `${num1} meters = ${(num1 * 3.28084).toFixed(3)} feet |
-   ${num1} feet = ${(num1 * 0.3048).toFixed(3)} meters`;
+	meters.textContent = `${valueInput} meter = ${(valueInput * 3.28084).toFixed(3)} feet`;
+	feet.textContent = `${valueInput} feet = ${(valueInput * 0.3048).toFixed(3)} meters`;
 
 	//Edits the values of the liter unit based on the input
-	liter.textContent = `${num1} liters = ${(num1 * 0.264172).toFixed(3)} gallons |
-   ${num1} gallons = ${(num1 * 3.78541).toFixed(3)} liters`;
+	liters.textContent = `${valueInput} liters = ${(valueInput * 0.264172).toFixed(3)} gallons`;
+	gallons.textContent = `${valueInput} gallons = ${(valueInput * 3.78541).toFixed(3)} liters`;
 
 	//Edits the values of the kilo unit based on the input
-	kilo.textContent = `${num1} kilos = ${(num1 * 2.20462).toFixed(3)} pounds |
-   ${num1} pounds = ${(num1 * 0.453592).toFixed(3)} kilos`;
+	kilos.textContent = `${valueInput} kilos = ${(valueInput * 2.20462).toFixed(3)} pounds`;
+	pounds.textContent = `${valueInput} pounds = ${(valueInput * 0.453592).toFixed(3)} kilos`;
 }
 
-update();
+convertValue();
