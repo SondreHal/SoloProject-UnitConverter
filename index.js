@@ -20,8 +20,16 @@ const focusInput = () => {
 };
 window.onload = focusInput();
 
-btnConvert.onmousedown = () => focusInput();
+// TO PREVENT KEYBOARD TO POP UP ON MOBILE WHEN CLICKING 'CONVERT'
+btnConvert.addEventListener('pointerup', (e) => {
+	if (e.pointerType !== 'mouse') {
+		return;
+	} else {
+		focusInput();
+	}
+});
 
+// TO HAVE ENTER AS 'CONVERT' OPTION
 numberInput.addEventListener('keydown', (e) => {
 	if (e.code === 'Enter') {
 		convertValue();
@@ -38,6 +46,7 @@ function convertValue() {
 		valueInput = 0;
 	}
 
+	// TEXT EDITOR IN RELATION TO INPUT VALUE
 	meters.textContent = `${valueInput} meters = ${(valueInput * 3.28084).toFixed(2)} feet`;
 	feet.textContent = `${valueInput} feet = ${(valueInput * 0.3048).toFixed(2)} meters`;
 
