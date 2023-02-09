@@ -1,5 +1,5 @@
 const numberInput = document.getElementById('number_input');
-// const btnConvert = document.getElementById('btn_convert');
+const btnConvert = document.getElementById('btn_convert');
 
 const meters = document.getElementById('meters');
 const feet = document.getElementById('feet');
@@ -20,7 +20,7 @@ const focusInput = () => {
 };
 window.onload = focusInput();
 
-// btnConvert.onmousedown = () => focusInput();
+btnConvert.onmousedown = () => focusInput();
 
 numberInput.addEventListener('keydown', (e) => {
 	if (e.code === 'Enter') {
