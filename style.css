@@ -8,13 +8,13 @@ body {
 	background-color: #1c1c1c;
 	color: #ffffff;
 	font-family: 'Inter', sans-serif;
-	padding-top: 50px;
+	padding-top: 3rem;
 }
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 550px;
-	width: 100%;
+	max-width: 100%;
+	width: 550px;
 }
 
 /* ACTION SECTION */
