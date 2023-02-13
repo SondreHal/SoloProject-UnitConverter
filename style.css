@@ -39,7 +39,6 @@ body {
 	margin: 0 auto;
 }
 .input_wrapper input[type='text'] {
-	-moz-appearance: textfield; /* REMOVES INPUT ARROWS ON FIREFOX	*/
 	background: transparent;
 	border-radius: 5px;
 	border: 2px solid #fda4af;
@@ -47,18 +46,12 @@ body {
 	font-size: 58px;
 	font-weight: 800;
 	line-height: 24.39px;
-	max-width: 100%;
+	max-width: 240px;
 	text-align: center;
-	width: 240px;
+	width: 100%;
 }
 .input_wrapper input[type='text']:focus {
 	outline: none;
-}
-/* REMOVES INPUT ARROWS ON GOOGLE CHROME	*/
-.input_wrapper input[type='text']::-webkit-inner-spin-button,
-.input_wrapper input[type='text']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
 }
 .input_wrapper .btn_convert {
 	background: #ffffff;

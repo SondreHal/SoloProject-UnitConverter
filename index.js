@@ -10,6 +10,11 @@ const gallons = document.getElementById('gallons');
 const kilos = document.getElementById('kilos');
 const pounds = document.getElementById('pounds');
 
+window.onload = () => {
+	focusInput();
+	convertValue();
+};
+
 const focusInput = () => {
 	numberInput.focus();
 
@@ -18,7 +23,6 @@ const focusInput = () => {
 	numberInput.value = ''; //CLEAR VALUE OF INPUT
 	numberInput.value = val; //SET THE VALUE BACK
 };
-window.onload = focusInput();
 
 // TO PREVENT KEYBOARD TO POP UP ON MOBILE WHEN CLICKING 'CONVERT'
 btnConvert.addEventListener('pointerup', (e) => {
@@ -47,13 +51,12 @@ function convertValue() {
 	}
 
 	// TEXT EDITOR IN RELATION TO INPUT VALUE
-	meters.textContent = `${valueInput} meters = ${(valueInput * 3.28084).toFixed(2)} feet`;
-	feet.textContent = `${valueInput} feet = ${(valueInput * 0.3048).toFixed(2)} meters`;
+	meters.textContent = `${valueInput} meter(s) = ${(valueInput * 3.28084).toFixed(2)} feet`;
+	feet.textContent = `${valueInput} feet = ${(valueInput * 0.3048).toFixed(2)} meter(s)`;
 
-	liters.textContent = `${valueInput} liters = ${(valueInput * 0.264172).toFixed(2)} gallons`;
-	gallons.textContent = `${valueInput} gallons = ${(valueInput * 3.78541).toFixed(2)} liters`;
+	liters.textContent = `${valueInput} liter(s) = ${(valueInput * 0.264172).toFixed(2)} gallon(s)`;
+	gallons.textContent = `${valueInput} gallon(s) = ${(valueInput * 3.78541).toFixed(2)} liter(s)`;
 
-	kilos.textContent = `${valueInput} kilos = ${(valueInput * 2.20462).toFixed(2)} pounds`;
-	pounds.textContent = `${valueInput} pounds = ${(valueInput * 0.453592).toFixed(2)} kilos`;
+	kilos.textContent = `${valueInput} kilo(s) = ${(valueInput * 2.20462).toFixed(2)} pound(s)`;
+	pounds.textContent = `${valueInput} pound(s) = ${(valueInput * 0.453592).toFixed(2)} kilo(s)`;
 }
-convertValue();
