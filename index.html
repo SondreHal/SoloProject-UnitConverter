@@ -44,7 +44,9 @@
 						id="number_input"
 						inputmode="numeric"
 						name="number_input"
-						oninput="this.value = this.value.replace(/[^0-9, .]/g, '')"
+						oninput="this.value = this.value
+						.replace(/[^\d.]/g, '') /*REMOVES ALL INPUTS BUT '0-9' & '.'*/
+						.replace(/([^.]*\.[^.]*)\./g, '$1');/*REMOVES REOCCURRING DECIMALS('.')*/"
 						type="text"
 						value="1"
 					/>
